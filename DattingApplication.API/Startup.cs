@@ -31,6 +31,7 @@ namespace DattingApplication.API
 
             var url = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DataContext>(x=>x.UseSqlite(url));
+            services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddCors();
         }
 
